@@ -105,6 +105,7 @@ while True:
     if choice == "report":
         print("Now reporting the current inventory levels of the sandwich machine.......")
         sandwich_machine.report()
+    """Choice regarding sub size before passing it into functions"""
     if choice == "small":
         if sandwich_machine.check_resources(recipes["small"]["ingredients"]):
             cost = recipes["small"]["cost"]
