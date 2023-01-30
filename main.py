@@ -97,6 +97,7 @@ class SandwichMachine:
 sandwich_machine = SandwichMachine(resources)
 
 while True:
+    """handles off/report functions"""
     print("What would you like? (small medium large off report)")
     choice = input()
     if choice == "off":
