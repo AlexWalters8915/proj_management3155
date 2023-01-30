@@ -79,7 +79,7 @@ class SandwichMachine:
     def make_sandwich(self, sandwich_size, order_ingredients):
         """Deduct the required ingredients from the resources.
            Hint: no output"""
-
+        """"Improved documentation for the make_sandwhich test commit"""
         for ingredient in order_ingredients:
             self.machine_resources["cheese"] -= order_ingredients["cheese"]
 
