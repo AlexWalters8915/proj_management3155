@@ -81,12 +81,9 @@ class SandwichMachine:
         """Deduct the required ingredients from the resources.
            Hint: no output"""
         """"Improved documentation for the make_sandwhich test commit"""
-        for ingredient in order_ingredients:
-            self.machine_resources["cheese"] -= order_ingredients["cheese"]
-
-            self.machine_resources["bread"] -= order_ingredients["bread"]
-            self.machine_resources["ham"] -= order_ingredients["ham"]
-
+        self.machine_resources["cheese"] -= order_ingredients["cheese"]
+        self.machine_resources["bread"] -= order_ingredients["bread"]
+        self.machine_resources["ham"] -= order_ingredients["ham"]
     def report(self):
         """print current resources"""
 
