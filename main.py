@@ -45,6 +45,7 @@ class SandwichMachine:
 
     def check_resources(self, ingredients):
         """Returns True when order can be made, False if ingredients are insufficient."""
+        """More documentation for check resources"""
         # https://www.geeksforgeeks.org/check-if-element-exists-in-list-in-python/
 
         if ingredients["cheese"] > self.machine_resources["cheese"]:
