@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sandwich Maker</title>
+</head>
+<body>
+<h3>Delete a sandwich</h3>
+<hr/>
+{%- for category, message in get_flashed_messages(with_categories = true) %}
+<div class="alert alert-danger">
+    {{ message }}
+</div>
+{%- endfor %}
+<h3><a href="{{ url_for('resource') }}">Resorce List </a></h3>
+
+<form method="POST" action="{{ request.path }}">
+    <label for="item">size</label><br>
+    <input type="text" name="item" value="{{data.sandwich_size}}" disabled/><br>
+    <label for="email">Amount</label><br>
+    <input type="number" name="amount" value="{{data.price}}" disabled/><br>
+    <input type="submit" value="Delete">
+</form>
+</body>
+</html>

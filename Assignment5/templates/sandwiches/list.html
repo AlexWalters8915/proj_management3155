@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>Resource List</h3>
+<hr/>
+{%- for message in get_flashed_messages() %}
+{{ message }}
+{%- endfor %}
+<h3><a href="{{ url_for('home') }}"> Home</a></h3>
+<h3><a href="{{ url_for('add_sandwich') }}"> Add sandwich Item</a></h3>
+
+<table>
+    <thead>
+    <tr>
+        <th>size</th>
+        <th>price</th>
+
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for resource in resources %}
+    <tr>
+        <td>{{ sandwichs.item }}</td>
+        <td>{{ sandwichs.amount }}</td>
+        <td>
+            <a href="{{ url_for('update_sandwich',id=sandwichs.sandwich_size) }}">
+                <button type="button">Update</button>
+            </a>
+            <a href="{{ url_for('delete_sandwich',id=sandwiches.price) }}">
+                <button type="submit">Delete</button>
+            </a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+</body>
+</html>
