@@ -25,10 +25,10 @@
     <tbody>
     {% for resource in resources %}
     <tr>
-        <td>{{ sandwichs.item }}</td>
-        <td>{{ sandwichs.amount }}</td>
+        <td>{{ sandwiches.sandwich_size }}</td>
+        <td>{{ sandwiches.price }}</td>
         <td>
-            <a href="{{ url_for('update_sandwich',id=sandwichs.sandwich_size) }}">
+            <a href="{{ url_for('update_sandwich',id=sandwiches.sandwich_size) }}">
                 <button type="button">Update</button>
             </a>
             <a href="{{ url_for('delete_sandwich',id=sandwiches.price) }}">

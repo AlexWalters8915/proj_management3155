@@ -97,9 +97,9 @@ def delete_resource(id):
 ############# swap in values respective to the sandwich version of the implimentation
 @app.route("/Sandwiches")
 def sandwich():
-    return render_template("sandwiches/list.html", resources=Sandwiches.query.all())
+    return render_template("sandwiches/list.html", sandwiches=Sandwiches.query.all())
 
-##swap in values for sandwich
+
 @app.route('/add_sandwich', methods=['GET', 'POST'])
 def add_sandwich():
     if request.method == 'POST':
@@ -107,7 +107,6 @@ def add_sandwich():
             flash('Please enter all the fields', 'error')
         else:
             sandwiches = Sandwiches(request.form['sandwich_size'], request.form['price'])
-
             db.session.add(Sandwiches)
             db.session.commit()
 
@@ -115,23 +114,23 @@ def add_sandwich():
             return redirect(url_for('sandwich'))
     return render_template('sandwiches/add.html')
 
-##swap in values for sandwhichs
+
 @app.route('/update_sandwich/<int:id>/', methods=['GET', 'POST'])
 def update_sandwich(sandwich_size):
     if request.method == 'POST':
-        if not request.form['item'] or not request.form['price']:
+        if not request.form['sandwich_size'] or not request.form['price']:
             flash('Please enter all the fields', 'error')
         else:
             sandwiches = Resource.query.filter_by(id=id).first()
-            sandwiches.sandwich_size = request.form['item']
+            sandwiches.sandwich_size = request.form['sandwich_size']
             sandwiches.price = request.form['amount']
             db.session.commit()
 
             flash('Record was successfully updated')
-            return redirect(url_for('sandwich'))
+            return redirect(url_for('sandwiches'))
     data = Sandwiches.query.filter_by(id=id).first()
     return render_template("sandwiches/update.html", data=data)
-##swap in values for sandwhich
+
 
 @app.route('/delete_sandwich/<int:id>/', methods=['GET', 'POST'])
 def delete_sandwich(sandwich_size):

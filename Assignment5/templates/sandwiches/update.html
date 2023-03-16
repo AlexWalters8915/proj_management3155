@@ -12,12 +12,11 @@
     {{ message }}
 </div>
 {%- endfor %}
-<h3><a href="{{ url_for('sandwichs') }}">Resorce List </a></h3>
+<h3><a href="{{ url_for('sandwich') }}">Resorce List </a></h3>
 
 <form method="POST" action="{{ request.path }}">
-    <label for="item">size</label><br>
+
     <input type="text" name="item" value="{{data.sandwiches_size}}"/><br>
-    <label for="email">Amount</label><br>
     <input type="number" name="amount" value="{{data.price}}"/><br>
     <input type="submit" value="Update">
 </form>
